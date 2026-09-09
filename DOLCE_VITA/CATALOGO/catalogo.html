@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="catalogo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolce Vita Productos</title>
+</head>
+
+<!-- ==========================================
+     BOTÓN FLOTANTE DEL CARRITO
+     ========================================== -->
+
+<button class="boton-carrito" onclick="abrirCarrito()" aria-label="Abrir carrito">
+
+    <span class="icono-carrito">🛍️</span>
+
+    <span class="contador-carrito" id="contadorCarrito">
+        0
+    </span>
+
+</button>
+
+
+<!-- ==========================================
+     FONDO OSCURO DEL CARRITO
+     ========================================== -->
+
+<div class="fondo-carrito"
+     id="fondoCarrito"
+     onclick="cerrarCarrito()">
+</div>
+
+
+<!-- ==========================================
+     PANEL DEL CARRITO
+     ========================================== -->
+
+<aside class="panel-carrito" id="panelCarrito">
+
+    <!-- ENCABEZADO -->
+
+    <div class="carrito-header">
+
+        <div>
+            <span class="carrito-corazon">♡</span>
+
+            <h2>Mi carrito</h2>
+
+            <p>Detalles preparados con amor 💕</p>
+        </div>
+
+        <button class="cerrar-carrito"
+                onclick="cerrarCarrito()">
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- DECORACIÓN -->
+
+    <div class="carrito-linea">
+        <span>✦</span>
+        <i></i>
+        <span>♡</span>
+        <i></i>
+        <span>✦</span>
+    </div>
+
+
+    <!-- PRODUCTOS -->
+
+    <div class="productos-carrito"
+         id="productosCarrito">
+
+        <!-- Aquí aparecerán los productos -->
+
+    </div>
+
+
+    <!-- CARRITO VACÍO -->
+
+    <div class="carrito-vacio"
+         id="carritoVacio">
+
+        <div class="carrito-vacio-icono">
+            🛍️
+        </div>
+
+        <h3>Tu carrito está vacío</h3>
+
+        <p>
+            Todavía no tienes detalles en tu carrito.
+            ¡Encuentra algo bonito para sorprender! 💕
+        </p>
+
+        <button onclick="cerrarCarrito()">
+            ✨ Explorar regalos
+        </button>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR -->
+
+    <div class="carrito-footer"
+         id="carritoFooter">
+
+        <div class="subtotal">
+
+            <span>Subtotal</span>
+
+            <strong id="subtotalCarrito">
+                $0
+            </strong>
+
+        </div>
+
+        <p class="mensaje-envio">
+            ✨ El amor está a un clic de distancia
+        </p>
+
+        <button class="boton-finalizar"
+                onclick="finalizarCompra()">
+
+            <span>💝</span>
+            Finalizar pedido
+
+        </button>
+
+        <button class="seguir-comprando"
+                onclick="cerrarCarrito()">
+
+            ← Seguir comprando
+
+        </button>
+
+    </div>
+
+</aside>
+
+<body>
+
+
+    <!-- =========================
+         BARRA
+    ========================= -->
+
+    <header class="barra">
+
+        <div class="logo">
+
+            <img src="WhatsApp Image 2026-09-08 at 3.49.59 PM.jpeg" alt="Logo">
+
+        </div>
+
+
+        <h1 class="titulo">
+           DOLCE VITA ANCHETAS
+        </h1>
+
+
+        <div class="menu-btn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         TITULO
+    ========================= -->
+
+    <h2 class="titulo-productos">
+        Nuestros Productos
+    </h2>
+
+    <p class="subtitulo">
+        Encuentra el regalo perfecto para cada ocasión 💗
+    </p>
+
+
+
+    <!-- =========================
+         PRODUCTOS
+    ========================= -->
+
+    <section class="productos-container">
+
+
+        <!-- PRODUCTO 1 -->
+
+        <div class="producto-card"
+             onclick="mostrarProducto(
+                'Ancheta Amor',
+                '$124.000',
+                'Rosado',
+                'Una hermosa ancheta preparada especialmente para sorprender a esa persona especial.',
+                'a.jpeg'
+             )">
+
+            <span class="etiqueta">
+                ⭐ Destacado
+            </span>
+
+            <img src="a.jpeg" alt="Ancheta">
+
+            <h3>
+                Ancheta Amor
+            </h3>
+
+            <div class="precio">
+                $124.000
+            </div>
+
+            <button
+    class="boton-agregar"
+    onclick="agregarAlCarrito(
+        'Ancheta Amor',
+        124000,
+        'a.jpeg'
+    )">
+
+    🛍️ Agregar al carrito
+
+</button>
+
+        </div>
+
+
+
+        <!-- PRODUCTO 2 -->
+
+        <div class="producto-card"
+             onclick="mostrarProducto(
+                'Ramo de Rosas',
+                '$120.000',
+                'Rojo',
+                'Hermoso ramo de rosas naturales ideal para regalar en momentos especiales.',
+                'ramo.jpeg'
+             )">
+
+            <img src="ramo.jpeg" alt="Ramo de rosas">
+
+            <h3>
+                Ramo de Rosas
+            </h3>
+
+            <div class="precio">
+                $120.000
+            </div>
+
+            <button
+    class="boton-agregar"
+    onclick="agregarAlCarrito(
+        'Ramo de Rosas',
+        120000,
+        'ramo.jpeg'
+    )">
+
+    🛍️ Agregar al carrito
+
+</button>
+
+        </div>
+
+
+
+        <!-- PRODUCTO 3 -->
+
+        <div class="producto-card"
+             onclick="mostrarProducto(
+                'Desayuno Sorpresa Especial',
+                '$85.000',
+                'Rosado',
+                'Caja decorativa con detalles especiales para sorprender a alguien que quieres.',
+                'DESAYUNO.jpeg'
+             )">
+
+            <img src="DESAYUNO.jpeg" alt="Desayuno Sorpresa Especial">
+
+            <h3>
+                Desayuno Sorpresa Especial
+            </h3>
+
+            <div class="precio">
+                $85.000
+            </div>
+
+            <button
+    class="boton-agregar"
+    onclick="agregarAlCarrito(
+        'Desayuno Sorpresa Especial',
+        85000,
+        'DESAYUNO.jpeg'
+    )">
+
+    🛍️ Agregar al carrito
+
+</button>
+
+        </div>
+
+
+
+        <!-- PRODUCTO 4 -->
+
+        <div class="producto-card"
+             onclick="mostrarProducto(
+                'Letra Premium',
+                '$92.000',
+                'Blanco',
+                'Elegante arreglo floral elaborado con flores seleccionadas y decoración premium.',
+                'letra.jpeg'
+             )">
+
+            <img src="letra.jpeg" alt="Letra Premium">
+
+            <h3>
+                Letra Premium
+            </h3>
+
+            <div class="precio">
+                $92.000
+            </div>
+
+            <button
+    class="boton-agregar"
+    onclick="agregarAlCarrito(
+        'Letra Premium',
+        92000,
+        'letra.jpeg'
+    )">
+
+    🛍️ Agregar al carrito
+
+</button>
+
+        </div>
+
+
+
+        <!-- PRODUCTO 5 -->
+
+        <div class="producto-card"
+             onclick="mostrarProducto(
+                'Ancheta Infantil',
+                '$115.000',
+                'Morado',
+                'Un detalle especial diseñado para celebrar cumpleaños, aniversarios y ocasiones importantes.',
+                'inf.jpeg'
+             )">
+
+            <img src="inf.jpeg" alt="Ancheta Infantil">
+
+            <h3>
+                Ancheta Infantil
+            </h3>
+
+            <div class="precio">
+                $115.000
+            </div>
+
+            
+            <button
+    class="boton-agregar"
+    onclick="agregarAlCarrito(
+        'Ancheta Infantil',
+        115000,
+        'inf.jpeg'
+    )">
+
+    🛍️ Agregar al carrito
+
+</button>
+
+        </div>
+
+
+
+        <!-- PRODUCTO 6 -->
+
+        <div class="producto-card"
+             onclick="mostrarProducto(
+                'Regalo Personalizado',
+                '$85.000',
+                'Rosa',
+                'Una pequeña pero hermosa ancheta perfecta para sorprender con un detalle.',
+                '654.jpeg'
+             )">
+
+            <img src="654.jpeg" alt="Regalo Personalizado">
+
+            <h3>
+                Regalo Personalizado
+            </h3>
+
+            <div class="precio">
+                $85.000
+            </div>
+
+             <button
+    class="boton-agregar"
+    onclick="agregarAlCarrito(
+        'Regalo Personalizado',
+        85000,
+        '654.jpeg'
+    )">
+
+    🛍️ Agregar al carrito
+
+</button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MODAL
+    ========================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-contenido">
+
+            <button class="cerrar" onclick="cerrarProducto()">
+                ×
+            </button>
+
+
+            <img
+                id="modalImagen"
+                class="modal-imagen"
+                src=""
+                alt="Producto"
+            >
+
+
+            <div class="modal-info">
+
+                <h2 id="modalNombre">
+                    Producto
+                </h2>
+
+                <div class="modal-precio"
+                     id="modalPrecio">
+                    $0
+                </div>
+
+
+                <div class="dato">
+
+                    🎨 <strong>Color:</strong>
+
+                    <span id="modalColor"></span>
+
+                </div>
+
+
+                <p>
+
+                    📝 <strong>Descripción:</strong>
+
+                </p>
+
+                <p id="modalDescripcion">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function mostrarProducto(
+            nombre,
+            precio,
+            color,
+            descripcion,
+            imagen
+        ) {
+
+            document.getElementById("modalNombre")
+                .textContent = nombre;
+
+            document.getElementById("modalPrecio")
+                .textContent = precio;
+
+            document.getElementById("modalColor")
+                .textContent = color;
+
+            document.getElementById("modalDescripcion")
+                .textContent = descripcion;
+
+            document.getElementById("modalImagen")
+                .src = imagen;
+
+            document.getElementById("modal")
+                .classList.add("activo");
+        }
+
+
+        function cerrarProducto() {
+
+            document.getElementById("modal")
+                .classList.remove("activo");
+        }
+
+
+        /* Cerrar haciendo clic fuera */
+
+        document.getElementById("modal")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    cerrarProducto();
+
+                }
+
+            });
+
+
+        /* Cerrar con ESC */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                cerrarProducto();
+
+            }
+
+        });
+
+    </script>
+
+    <script>
+
+/* ==========================================
+   CARRITO DE DOLCE VITA ANCHETAS
+   ========================================== */
+
+let carrito = [];
+
+
+/* ==========================================
+   ABRIR CARRITO
+   ========================================== */
+
+function abrirCarrito() {
+
+    document
+        .getElementById("panelCarrito")
+        .classList.add("activo");
+
+    document
+        .getElementById("fondoCarrito")
+        .classList.add("activo");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* ==========================================
+   CERRAR CARRITO
+   ========================================== */
+
+function cerrarCarrito() {
+
+    document
+        .getElementById("panelCarrito")
+        .classList.remove("activo");
+
+    document
+        .getElementById("fondoCarrito")
+        .classList.remove("activo");
+
+    document.body.style.overflow = "";
+}
+
+
+/* ==========================================
+   AGREGAR PRODUCTO
+   ========================================== */
+
+function agregarAlCarrito(
+    nombre,
+    precio,
+    imagen
+) {
+
+    const productoExistente =
+        carrito.find(
+            producto =>
+                producto.nombre === nombre
+        );
+
+
+    if (productoExistente) {
+
+        productoExistente.cantidad++;
+
+    } else {
+
+        carrito.push({
+
+            nombre: nombre,
+
+            precio: precio,
+
+            imagen: imagen,
+
+            cantidad: 1
+
+        });
+
+    }
+
+
+    actualizarCarrito();
+
+    abrirCarrito();
+
+    animarContador();
+}
+
+
+/* ==========================================
+   ACTUALIZAR CARRITO
+   ========================================== */
+
+function actualizarCarrito() {
+
+    const contenedor =
+        document.getElementById(
+            "productosCarrito"
+        );
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+    const subtotal =
+        document.getElementById(
+            "subtotalCarrito"
+        );
+
+    const carritoVacio =
+        document.getElementById(
+            "carritoVacio"
+        );
+
+    const carritoFooter =
+        document.getElementById(
+            "carritoFooter"
+        );
+
+
+    contenedor.innerHTML = "";
+
+
+    let cantidadTotal = 0;
+
+    let precioTotal = 0;
+
+
+    carrito.forEach(
+        (producto, indice) => {
+
+            cantidadTotal +=
+                producto.cantidad;
+
+            precioTotal +=
+                producto.precio *
+                producto.cantidad;
+
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "item-carrito";
+
+
+            item.innerHTML = `
+
+                <div class="item-imagen">
+
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}"
+                    >
+
+                </div>
+
+
+                <div class="item-info">
+
+                    <h4>
+                        ${producto.nombre}
+                    </h4>
+
+                    <div class="item-precio">
+                        ${formatearPrecio(producto.precio)}
+                    </div>
+
+
+                    <div class="cantidad">
+
+                        <button
+                            onclick="cambiarCantidad(
+                                ${indice},
+                                -1
+                            )">
+                            −
+                        </button>
+
+
+                        <span>
+                            ${producto.cantidad}
+                        </span>
+
+
+                        <button
+                            onclick="cambiarCantidad(
+                                ${indice},
+                                1
+                            )">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="eliminar-producto"
+                    onclick="eliminarProducto(
+                        ${indice}
+                    )"
+                    title="Eliminar">
+
+                    🗑️
+
+                </button>
+
+            `;
+
+
+            contenedor.appendChild(item);
+
+        }
+    );
+
+
+    contador.textContent =
+        cantidadTotal;
+
+
+    subtotal.textContent =
+        formatearPrecio(precioTotal);
+
+
+    if (carrito.length === 0) {
+
+        carritoVacio.style.display =
+            "flex";
+
+        carritoFooter.style.display =
+            "none";
+
+    } else {
+
+        carritoVacio.style.display =
+            "none";
+
+        carritoFooter.style.display =
+            "block";
+    }
+}
+
+
+/* ==========================================
+   CAMBIAR CANTIDAD
+   ========================================== */
+
+function cambiarCantidad(
+    indice,
+    cambio
+) {
+
+    carrito[indice].cantidad +=
+        cambio;
+
+
+    if (
+        carrito[indice].cantidad <= 0
+    ) {
+
+        carrito.splice(indice, 1);
+
+    }
+
+
+    actualizarCarrito();
+}
+
+
+/* ==========================================
+   ELIMINAR PRODUCTO
+   ========================================== */
+
+function eliminarProducto(indice) {
+
+    carrito.splice(indice, 1);
+
+    actualizarCarrito();
+}
+
+
+/* ==========================================
+   FORMATO DE PRECIO
+   ========================================== */
+
+function formatearPrecio(precio) {
+
+    return new Intl.NumberFormat(
+        "es-CO",
+        {
+            style: "currency",
+            currency: "COP",
+            maximumFractionDigits: 0
+        }
+    ).format(precio);
+}
+
+
+/* ==========================================
+   ANIMACIÓN DEL CONTADOR
+   ========================================== */
+
+function animarContador() {
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+
+    contador.classList.remove(
+        "activo"
+    );
+
+
+    void contador.offsetWidth;
+
+
+    contador.classList.add(
+        "activo"
+    );
+}
+
+
+/* ==========================================
+   FINALIZAR PEDIDO
+   ========================================== */
+
+function finalizarCompra() {
+
+    if (carrito.length === 0) {
+
+        alert(
+            "💕 Tu carrito está vacío."
+        );
+
+        return;
+    }
+
+
+    let mensaje =
+        "💝 PEDIDO - DOLCE VITA ANCHETAS\n\n";
+
+
+    let total = 0;
+
+
+    carrito.forEach(
+        producto => {
+
+            const subtotal =
+                producto.precio *
+                producto.cantidad;
+
+
+            total += subtotal;
+
+
+            mensaje +=
+                "🎁 " +
+                producto.nombre +
+                "\n";
+
+            mensaje +=
+                "Cantidad: " +
+                producto.cantidad +
+                "\n";
+
+            mensaje +=
+                "Precio: " +
+                formatearPrecio(
+                    producto.precio
+                ) +
+                "\n\n";
+
+        }
+    );
+
+
+    mensaje +=
+        "💗 TOTAL: " +
+        formatearPrecio(total);
+
+
+    alert(mensaje);
+}
+
+
+/* ==========================================
+   INICIAR CARRITO
+   ========================================== */
+
+actualizarCarrito();
+
+</script>
+
+
+</body>
+</html>
