@@ -1621,69 +1621,163 @@
         scale(0.97);
 }
 
-/* ================================
-   AJUSTE PARA CELULARES
-================================ */
+/* =========================================
+   AJUSTE PARA CELULARES - PRODUCTOS
+   ========================================= */
 
 @media (max-width: 600px) {
 
     .barra {
-        height: 78px;
-        padding: 0 10px;
+        width: 100%;
+        height: 78px !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
     }
 
-    body {
-        padding-top: 78px;
-    }
-
-    .barra h1 {
-        font-size: 30px;
-        white-space: nowrap;
-        text-align: center;
-    }
-
-    .barra img,
+    /* LOGO */
     .logo {
-        width: 48px;
-        height: 48px;
+        position: absolute !important;
+        left: 10px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 52px !important;
+        height: 52px !important;
+        z-index: 100001;
     }
 
+    .logo img {
+        width: 52px !important;
+        height: 52px !important;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    /* TÍTULO */
+    .titulo {
+        position: absolute !important;
+        left: 68px !important;
+        right: 65px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        color: white !important;
+        font-family: 'Great Vibes', cursive !important;
+        font-size: 28px !important;
+        font-weight: 600 !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        line-height: 1 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* MENÚ HAMBURGUESA */
+    .menu-btn {
+        position: fixed !important;
+        top: 20px !important;
+        right: 14px !important;
+
+        width: 34px !important;
+        height: 38px !important;
+
+        transform: none !important;
+        z-index: 100002;
+    }
+
+    .menu-btn span {
+        display: block !important;
+        width: 34px !important;
+        height: 4px !important;
+        margin: 6px 0 !important;
+
+        background: white !important;
+        border-radius: 10px;
+    }
+
+    /* MENÚ DESPLEGABLE */
     .menu {
-        font-size: 25px;
+        position: fixed !important;
+        top: 78px !important;
+        right: -280px !important;
+
+        width: 280px !important;
+        height: calc(100vh - 78px) !important;
+
+        background: white !important;
+        z-index: 100000;
+
+        padding-top: 10px !important;
+
+        box-shadow: -8px 0 30px rgba(233, 30, 99, 0.18);
+
+        transition: right 0.3s ease;
+        overflow-y: auto;
     }
 
-    .redes-fijas {
-        top: 95px;
-        left: 10px;
-        gap: 10px;
+    .menu.activo {
+        right: 0 !important;
     }
 
-    .red-social {
-        width: 52px;
-        height: 52px;
+    .menu a {
+        display: flex !important;
+        align-items: center;
+        gap: 15px;
+
+        padding: 18px 25px !important;
+        font-size: 17px !important;
     }
 
-    .bienvenida {
-        margin: 25px 12px;
-        padding: 35px 18px;
+    /* ESPACIO DEL HEADER */
+    body {
+        padding-top: 78px !important;
     }
 
-    .bienvenida h1 {
-        font-size: 38px;
-        line-height: 1.15;
+    /* =========================================
+       TÍTULO DE PRODUCTOS
+       ========================================= */
+
+    .productos-header,
+    .encabezado-productos {
+        padding-top: 45px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
-    .bienvenida h2 {
-        font-size: 23px;
+    .productos-header h1,
+    .encabezado-productos h1 {
+        font-size: 42px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 15px !important;
     }
 
-    .bienvenida p {
-        font-size: 17px;
-        line-height: 1.7;
+    .productos-header p,
+    .encabezado-productos p {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
     }
 
-    .mensaje-final {
-        font-size: 17px;
-        padding: 15px;
+    /* TARJETAS */
+    .productos-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+        padding: 20px !important;
     }
+
+    .producto-card {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
 }
