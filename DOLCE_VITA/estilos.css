@@ -3234,3 +3234,180 @@ textarea:focus {
         padding: 15px;
     }
 }
+
+/* ==========================================
+   ARREGLO FINAL DE LA BARRA EN CELULAR
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    /* Barra */
+    .barra {
+        width: 100%;
+        height: 78px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+    }
+
+    /* Logo */
+    .logo {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px !important;
+        height: 52px !important;
+        z-index: 100001;
+    }
+
+    .logo img {
+        width: 52px !important;
+        height: 52px !important;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    /* TÍTULO */
+    .titulo {
+        position: absolute;
+        left: 70px;
+        right: 65px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: auto;
+
+        color: white;
+
+        font-family: 'Great Vibes', cursive;
+
+        font-size: 29px !important;
+        font-weight: 600;
+
+        letter-spacing: 0.5px;
+
+        text-align: center;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: clip;
+
+        line-height: 1;
+    }
+
+    /* =====================================
+       TRES RAYAS DEL MENÚ
+       ===================================== */
+
+    .menu-btn {
+        position: fixed !important;
+
+        top: 21px !important;
+        right: 14px !important;
+
+        width: 34px !important;
+        height: 36px;
+
+        transform: none !important;
+
+        cursor: pointer;
+
+        z-index: 100002;
+
+        display: block;
+    }
+
+    .menu-btn span {
+        display: block;
+
+        width: 34px;
+        height: 4px;
+
+        margin: 6px 0;
+
+        background: white;
+
+        border-radius: 10px;
+
+        box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+
+    /* =====================================
+       MENÚ LATERAL
+       ===================================== */
+
+    .menu {
+        position: fixed !important;
+
+        top: 78px !important;
+        right: -280px;
+
+        width: 280px;
+
+        height: calc(100vh - 78px);
+
+        background: white;
+
+        z-index: 100000;
+
+        padding-top: 10px;
+
+        box-shadow:
+            -8px 0 30px rgba(233, 30, 99, 0.18);
+
+        transition: right 0.3s ease;
+
+        overflow-y: auto;
+    }
+
+    .menu.activo {
+        right: 0 !important;
+    }
+
+    .menu a {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 18px 25px;
+
+        font-size: 17px;
+    }
+
+    /* =====================================
+       REDES SOCIALES
+       ===================================== */
+
+    .redes-fijas {
+        position: fixed;
+
+        left: 10px;
+        top: 95px;
+
+        z-index: 99998;
+
+        gap: 10px;
+    }
+
+    .red-social {
+        width: 52px;
+        height: 52px;
+    }
+
+    /* =====================================
+       CUERPO
+       ===================================== */
+
+    body {
+        padding-top: 78px;
+    }
+}
