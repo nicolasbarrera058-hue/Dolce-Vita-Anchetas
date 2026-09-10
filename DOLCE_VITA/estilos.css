@@ -3167,3 +3167,70 @@ textarea:focus {
     }
 
 }
+
+/* ================================
+   AJUSTE PARA CELULARES
+================================ */
+
+@media (max-width: 600px) {
+
+    .barra {
+        height: 78px;
+        padding: 0 10px;
+    }
+
+    body {
+        padding-top: 78px;
+    }
+
+    .barra h1 {
+        font-size: 30px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .barra img,
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .menu {
+        font-size: 25px;
+    }
+
+    .redes-fijas {
+        top: 95px;
+        left: 10px;
+        gap: 10px;
+    }
+
+    .red-social {
+        width: 52px;
+        height: 52px;
+    }
+
+    .bienvenida {
+        margin: 25px 12px;
+        padding: 35px 18px;
+    }
+
+    .bienvenida h1 {
+        font-size: 38px;
+        line-height: 1.15;
+    }
+
+    .bienvenida h2 {
+        font-size: 23px;
+    }
+
+    .bienvenida p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .mensaje-final {
+        font-size: 17px;
+        padding: 15px;
+    }
+}
